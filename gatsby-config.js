@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+  pathPrefix: "/",
   siteMetadata: {
     title: 'Hui Min Wu',
     siteUrl: 'https://huiminwu.github.io',
