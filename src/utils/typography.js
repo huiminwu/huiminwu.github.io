@@ -1,7 +1,16 @@
 import Typography from "typography"
-import kirkhamTheme from "typography-theme-kirkham"
+import grandViewTheme from "typography-theme-grand-view"
+grandViewTheme.overrideStyles = () => ({
+  'a': {
+    color: '#68AEC7',
+    fontSize: '20px',
+  },
+  'p': {
+    fontSize: '20px',
+  }
+})
 
-const typography = new Typography(kirkhamTheme)
+const typography = new Typography(grandViewTheme)
 
 export default typography
 export const rhythm = typography.rhythm
