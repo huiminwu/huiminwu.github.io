@@ -2,4 +2,16 @@
 
 [Website](https://www.huiminwu.github.io)
 
-More information can be found on the master branch as to how I made this website and the tasks I have yet to do.
+For this website, I used
+ - Gatsby.js
+ - Node.js
+ - styled-components
+ - typography
+ - markdown
+ - GraphQL
+
+Things I have yet to do:
+  - [ ] Add animation for clickable logos
+  - [ ] Add page transition animations
+  - [ ] Add animation hovering over tech logos
+  - [ ] Organize code a lot better
