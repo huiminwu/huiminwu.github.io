@@ -1,6 +1,6 @@
 # Hui Min Wu's website
 
-[Visit Here!]
+[Visit Here!](https://huiminwu.github.io)
 
 Note: Since the website deploys from master, the actual source code for the website is currently on my develop branch!
 
