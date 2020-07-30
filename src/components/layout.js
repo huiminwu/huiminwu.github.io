@@ -7,7 +7,7 @@ import { rhythm } from "../utils/typography"
 const Container = styled.div`
   .cont{
     margin: 0 auto;
-    max-width: 1600px;
+    max-width: 1400px;
     padding: ${rhythm(1.5)} ${rhythm(2)};
   
   }

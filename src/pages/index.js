@@ -60,7 +60,6 @@ const PageWrapper = styled.div`
 `
 
 export default ({ data }) => {
-  console.log(data)
   const {
     githubURL,
     linkedinURL,

@@ -3,9 +3,12 @@ import grandViewTheme from "typography-theme-grand-view"
 grandViewTheme.overrideStyles = () => ({
   'a': {
     color: '#68AEC7',
-    fontSize: '20px',
+    fontSize: '16px',
   },
   'p': {
+    fontSize: '16px',
+  },
+  'h1': {
     fontSize: '20px',
   }
 })

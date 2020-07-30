@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import { FaGithub, FaLink } from "react-icons/fa";
+import { FaGithub, FaLink, FaPython } from "react-icons/fa";
 import { DiReact } from "react-icons/di"
 import GatsbyImg from "../img/gatsby.svg";
 import GraphQLImg from "../img/graphql.svg";
@@ -10,6 +10,8 @@ import JavaScriptImg from "../img/javascript.svg";
 import MarkdownImg from "../img/markdown.svg";
 import MongoDBImg from "../img/mongodb.svg";
 import NodeImg from "../img/node.svg";
+import SQLiteImg from "../img/sqlite.svg";
+import FlaskImg from "../img/flask.svg";
 import { rhythm } from "../utils/typography"
 
 
@@ -54,7 +56,7 @@ const InfoWrapper = styled.div`
     align-items: stretch;
     flex: 1 1 600px;
     min-width: 100px;
-    font-size: 20px;
+    font-size: 16px;
   }
 
 
@@ -92,7 +94,14 @@ const InfoWrapper = styled.div`
         .small img{
             width: 70px;
             height: 70px;
-            // margin-top: 0;
+        }
+        .sqlite img{
+          width: 90px;
+          height: 50px;
+        }
+        .flask img{
+          width: 50px;
+          height: 50px;
         }
       }
       
@@ -106,22 +115,93 @@ export default ({ data }) => {
   const {
     P1Name,
     P1Descript,
-    P1NameTechUsed,
     P1GitHubLink,
     P1Link,
     P2Name,
     P2Descript,
-    P2NameTechUsed,
     P2GitHubLink,
     P2Link,
     P3Name,
     P3Descript,
-    P3NameTechUsed,
     P3GitHubLink,
-    P3Link
+    P3Link,
+    P4Name,
+    P4Descript
   } = data.allMarkdownRemark.edges[0].node.frontmatter
   return (
     <Layout>
+      <ProjectWrapper>
+        <div className="Subtitle">
+          <h1> {P4Name} </h1>
+        </div>
+        <InfoWrapper>
+          <Img
+            title="Badger"
+            alt="Badger"
+            fixed={data.BadgerImg.childImageSharp.fixed}
+            className="projpicture"
+          />
+          <div className="info">
+            {P4Descript}
+            <br /> <br />
+            Technologies Used:
+            <ul className="TechLinks">
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.reactjs.org/"
+                  rel="noopener"
+                  aria-label="React.js"
+                >
+                  <DiReact />
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.python.org/"
+                  rel="noopener"
+                  aria-label="Python"
+                >
+                  <FaPython />
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://flask.palletsprojects.com/en/1.1.x/"
+                  rel="noopener"
+                  aria-label="Flask"
+                >
+                  <div className="flask">
+                    <img
+                      src={FlaskImg}
+                      title="Flask"
+                      alt="Flask"
+                    />
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.sqlite.org/index.html"
+                  rel="noopener"
+                  aria-label="SQLite"
+                >
+                  <div className="sqlite">
+                    <img
+                      src={SQLiteImg}
+                      title="SQLite"
+                      alt="SQLite"
+                    />
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </InfoWrapper>
+      </ProjectWrapper>
       <ProjectWrapper>
         <div className="Subtitle">
           <h1> {P1Name} </h1>
@@ -253,7 +333,6 @@ export default ({ data }) => {
                 </a>
               </li>
             </ul>
-
           </div>
         </InfoWrapper>
       </ProjectWrapper>
@@ -502,6 +581,8 @@ export const query = graphql`
         edges {
         node {
         frontmatter {
+          P4Name
+          P4Descript
         P1Name
             P1Descript
 P1NameTechUsed
@@ -556,5 +637,12 @@ P3Link
           }
       }
     }
+    BadgerImg: file(relativePath: {eq: "img/badger.png" }) {
+      childImageSharp {
+        fixed(height: 300, width: 320) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+}
   }
 `
