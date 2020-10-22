@@ -80,7 +80,7 @@ export default ({ data }) => {
               </div>
             </div>
             <h1 className="headline">
-              Hi, I'm Hui Min Wu, a rising sophomore studying computer science at MIT!
+              Hi, I'm Hui Min Wu, a sophomore studying computer science at MIT!
             </h1>
             <br />
             <p>
